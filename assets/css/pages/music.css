@@ -1,0 +1,31 @@
+.music-page {
+  display: grid;
+  gap: 25px;
+  grid: auto / repeat(2, 1fr);
+}
+
+.music-page > a {
+  display: inline-grid;
+}
+
+.music-page__cover {
+  background-color: var(--color-black);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-grid;
+  height: calc(100vw / 2 - 25px - 12.5px);
+  width: calc(100vw / 2 - 25px - 12.5px);
+}
+
+@media (max-width: 575.98px) {
+  .music-page {
+    gap: 15px;
+    grid: auto / 1fr;
+  }
+
+  .music-page__cover {
+    height: calc(100vw - 15px * 2);
+    width: calc(100vw - 15px * 2);
+  }
+}

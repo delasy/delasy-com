@@ -1,0 +1,233 @@
+<!doctype html>
+<html {{ if BUILD_TYPE === BUILD_TYPE_AMP }}amp {{ endif }}lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="MobileOptimized" content="width" />
+    <meta name="google" content="notranslate" />
+    <meta name="locale" content="en" />
+
+    <meta name="msapplication-TileColor" content="#000000" />
+    <meta name="msapplication-TileImage" content="{{ PUBLIC_URL }}/favicon-144x144.png" />
+    <meta name="msapplication-config" content="{{ PUBLIC_URL }}/browserconfig.xml" />
+
+    <meta name="robots" content="{{ PAGE_ROBOTS }}" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0" />
+
+    {{ PAGE_METATAGS }}
+
+    <link rel="apple-touch-icon" href="{{ PUBLIC_URL }}/favicon-192x192.png" />
+    <link rel="apple-touch-icon" href="{{ PUBLIC_URL }}/favicon-57x57.png" sizes="57x57" />
+    <link rel="apple-touch-icon" href="{{ PUBLIC_URL }}/favicon-60x60.png" sizes="60x60" />
+    <link rel="apple-touch-icon" href="{{ PUBLIC_URL }}/favicon-72x72.png" sizes="72x72" />
+    <link rel="apple-touch-icon" href="{{ PUBLIC_URL }}/favicon-76x76.png" sizes="76x76" />
+    <link rel="apple-touch-icon" href="{{ PUBLIC_URL }}/favicon-114x114.png" sizes="114x114" />
+    <link rel="apple-touch-icon" href="{{ PUBLIC_URL }}/favicon-120x120.png" sizes="120x120" />
+    <link rel="apple-touch-icon" href="{{ PUBLIC_URL }}/favicon-144x144.png" sizes="144x144" />
+    <link rel="apple-touch-icon" href="{{ PUBLIC_URL }}/favicon-152x152.png" sizes="152x152" />
+    <link rel="apple-touch-icon" href="{{ PUBLIC_URL }}/favicon-180x180.png" sizes="180x180" />
+    <link rel="icon" href="{{ PUBLIC_URL }}/favicon-16x16.png" type="image/png" sizes="16x16" />
+    <link rel="icon" href="{{ PUBLIC_URL }}/favicon-32x32.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="{{ PUBLIC_URL }}/favicon-96x96.png" type="image/png" sizes="96x96" />
+    <link rel="icon"  href="{{ PUBLIC_URL }}/favicon-192x192.png" type="image/png" sizes="192x192" />
+    {{ if BUILD_TYPE === BUILD_TYPE_AMP }}
+      <link rel="manifest" href="{{ PUBLIC_URL }}/manifest.amp.json" />
+    {{ else }}
+      <link rel="manifest" href="{{ PUBLIC_URL }}/manifest.json" />
+    {{ endif }}
+    <link rel="mask-icon" href="{{ PUBLIC_URL }}/favicon.svg" color="#000000" />
+    <link rel="shortcut icon" href="{{ PUBLIC_URL }}/favicon.ico" />
+    {{ if BUILD_TYPE === BUILD_TYPE_AMP }}
+      <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js" />
+    {{ endif }}
+
+    <title>{{ PAGE_TITLE }}</title>
+
+    {{ if BUILD_TYPE === BUILD_TYPE_AMP }}
+      <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    {{ endif }}
+
+    {{ PAGE_STYLE }}
+
+    {{ if BUILD_TYPE === BUILD_TYPE_AMP }}
+      {{ STRUCTURED_DATA }}
+      <script async src="https://cdn.ampproject.org/v0.js"></script>
+      <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+      <script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+      <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+    {{ else }}
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!=='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-ML2F732');</script>
+    {{ endif }}
+  </head>
+  <body>
+    {{ if BUILD_TYPE === BUILD_TYPE_AMP }}
+      <amp-sidebar class="default-layout__header-menu" id="menu" layout="nodisplay">
+        <div class="default-layout__close-container">
+          <button class="default-layout__header-close" on="tap:menu.close" aria-label="Close menu">
+            {{ ICON_TIMES }}
+          </button>
+        </div>
+        <div class="default-layout__header-link">
+          <a href="{{ link('/music') }}" aria-label="Music">
+            MUSIC
+          </a>
+        </div>
+        <div class="default-layout__header-link">
+          <a aria-label="Video (soon)">
+            VIDEO
+            <span class="default-layout__link-badge">soon</span>
+          </a>
+        </div>
+        <div class="default-layout__header-link">
+          <a aria-label="Store (soon)">
+            STORE
+            <span class="default-layout__link-badge">soon</span>
+          </a>
+        </div>
+        <div class="default-layout__header-link">
+          <a aria-label="Tour (soon)">
+            TOUR
+            <span class="default-layout__link-badge">soon</span>
+          </a>
+        </div>
+      </amp-sidebar>
+    {{ else }}
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-ML2F732" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    {{ endif }}
+    <div class="default-layout">
+      <span class="default-layout__bg"></span>
+      <header class="default-layout__header">
+        <div class="default-layout__header-logo">
+          <a href="{{ link('/') }}" aria-label="Home">
+            {{ ICON_LOGO }}
+          </a>
+        </div>
+        <button class="default-layout__header-toggler"{{ if BUILD_TYPE === BUILD_TYPE_AMP }}on="tap:menu.open"{{ endif }} aria-label="Open menu">
+          {{ ICON_BARS }}
+        </button>
+        <div class="default-layout__header-menu">
+          <div class="default-layout__close-container">
+            <button class="default-layout__header-close" aria-label="Close menu">
+              {{ ICON_TIMES }}
+            </button>
+          </div>
+          <div class="default-layout__header-link">
+            <a href="{{ link('/music') }}" aria-label="Music">
+              MUSIC
+            </a>
+          </div>
+          <div class="default-layout__header-link">
+            <a aria-label="Video (soon)">
+              VIDEO
+              <span class="default-layout__link-badge">soon</span>
+            </a>
+          </div>
+          <div class="default-layout__header-link">
+            <a aria-label="Store (soon)">
+              STORE
+              <span class="default-layout__link-badge">soon</span>
+            </a>
+          </div>
+          <div class="default-layout__header-link">
+            <a aria-label="Tour (soon)">
+              TOUR
+              <span class="default-layout__link-badge">soon</span>
+            </a>
+          </div>
+        </div>
+        <div class="default-layout__header-overlay"></div>
+      </header>
+      <main class="default-layout__main">
+        {{ PAGE_CONTENT }}
+      </main>
+      <footer class="default-layout__footer">
+        <div class="default-layout__footer-links">
+          <div class="default-layout__footer-links--social">
+            <div class="default-layout__footer-link">
+              <a href="https://www.facebook.com/aarondelasy/" rel="noopener noreferrer" target="_blank" aria-label="Aaron Delasy on Facebook">
+                {{ ICON_FACEBOOK }}
+              </a>
+            </div>
+            <div class="default-layout__footer-link">
+              <a href="https://www.instagram.com/aarondelasy" rel="noopener noreferrer" target="_blank" aria-label="Aaron Delasy on Instagram">
+                {{ ICON_INSTAGRAM }}
+              </a>
+            </div>
+            <div class="default-layout__footer-link">
+              <a href="https://www.snapchat.com/add/aarondelasy" rel="noopener noreferrer" target="_blank" aria-label="Aaron Delasy on Snapchat">
+                {{ ICON_SNAPCHAT }}
+              </a>
+            </div>
+            <div class="default-layout__footer-link">
+              <a href="https://www.tiktok.com/@aarondelasy" rel="noopener noreferrer" target="_blank" aria-label="Aaron Delasy on TikTok">
+                {{ ICON_TIKTOK }}
+              </a>
+            </div>
+            <div class="default-layout__footer-link">
+              <a href="https://twitter.com/aarondelasy/" rel="noopener noreferrer" target="_blank" aria-label="Aaron Delasy on Twitter">
+                {{ ICON_TWITTER }}
+              </a>
+            </div>
+            <div class="default-layout__footer-link">
+              <a href="https://www.youtube.com/user/aarondelasy" rel="noopener noreferrer" target="_blank" aria-label="Aaron Delasy on YouTube">
+                {{ ICON_YOUTUBE }}
+              </a>
+            </div>
+          </div>
+          <div class="default-layout__footer-links--audio">
+            <div class="default-layout__footer-link">
+              <a href="https://open.spotify.com/artist/5iLgnn7dak5qB89a0VWvI8" rel="noopener noreferrer" target="_blank" aria-label="Aaron Delasy on Spotify">
+                {{ ICON_SPOTIFY }}
+              </a>
+            </div>
+            <div class="default-layout__footer-link">
+              <a href="https://soundcloud.com/aarondelasy" rel="noopener noreferrer" target="_blank" aria-label="Aaron Delasy on SoundCloud">
+                {{ ICON_SOUNDCLOUD }}
+              </a>
+            </div>
+            <div class="default-layout__footer-link">
+              <a href="https://music.apple.com/artist/1519983003" rel="noopener noreferrer" target="_blank" aria-label="Aaron Delasy on Apple Music">
+                {{ ICON_APPLE_MUSIC }}
+              </a>
+            </div>
+            <div class="default-layout__footer-link">
+              <a href="https://music.youtube.com/channel/UCtwWt7rKwkgVWX6BOEBNXtw" rel="noopener noreferrer" target="_blank" aria-label="Aaron Delasy on YouTube Music">
+                {{ ICON_YOUTUBE_MUSIC }}
+              </a>
+            </div>
+            <div class="default-layout__footer-link">
+              <a href="https://music.amazon.com/artists/B08BPD27TN" rel="noopener noreferrer" target="_blank" aria-label="Aaron Delasy on Amazon Music">
+                {{ ICON_AMAZON_MUSIC }}
+              </a>
+            </div>
+            <div class="default-layout__footer-link">
+              <a href="https://listen.tidal.com/artist/20137232" rel="noopener noreferrer" target="_blank" aria-label="Aaron Delasy on Tidal">
+                {{ ICON_TIDAL }}
+              </a>
+            </div>
+            <div class="default-layout__footer-link">
+              <a href="https://genius.com/aarondelasy" rel="noopener noreferrer" target="_blank" aria-label="Aaron Delasy on Genius">
+                {{ ICON_GENIUS }}
+              </a>
+            </div>
+          </div>
+          <div class="default-layout__footer-email">
+            <a href="mailto:mgmt@delasy.com" rel="noopener noreferrer" target="_blank">
+              mgmt@delasy.com
+            </a>
+          </div>
+        </div>
+        <div class="default-layout__footer-copyright">
+          <p>Copyright &copy; 2020 Aaron Delasy</p>
+        </div>
+      </footer>
+    </div>
+    {{ PAGE_SCRIPT }}
+    {{ if BUILD_TYPE === BUILD_TYPE_AMP }}
+      <amp-analytics config="https://www.googletagmanager.com/amp.json?id=GTM-59JHVWM&gtm.url=SOURCE_URL" data-credentials="include"></amp-analytics>
+      <amp-install-serviceworker data-iframe-src="{{ PUBLIC_URL }}/sw-install.amp.html" layout="nodisplay" src="{{ PUBLIC_URL }}/sw.amp.js"></amp-install-serviceworker>
+    {{ endif }}
+  </body>
+</html>

@@ -1,0 +1,214 @@
+.album-layout {
+  align-content: start;
+  background-color: var(--color-black);
+  display: grid;
+  justify-items: center;
+  min-height: 100vh;
+  position: relative;
+}
+
+.album-layout__bg {
+  background-color: var(--color-black);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  bottom: 0;
+  filter: blur(40px);
+  left: 0;
+  opacity: 0.25;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.album-layout__main {
+  align-content: start;
+  display: inline-grid;
+  justify-items: center;
+  padding: 25px;
+  position: relative;
+  width: 750px;
+}
+
+.album-layout__title {
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.album-layout__title-name {
+  color: var(--color-white);
+  font-size: 28px;
+  font-weight: 300;
+}
+
+.album-layout__title-name::after {
+  content: ' - ';
+}
+
+.album-layout__title-author {
+  color: var(--color-white);
+  font-size: 28px;
+  font-weight: 300;
+  white-space: nowrap;
+}
+
+.album-layout__title-author > svg {
+  height: 24px;
+  margin-left: 10px;
+  vertical-align: baseline;
+  width: 24px;
+}
+
+.album-layout__hr {
+  background-color: var(--color-white);
+  border: 0;
+  border-radius: 2px;
+  height: 4px;
+  margin: 0 0 25px;
+  width: 50%;
+}
+
+.album-layout__meta {
+  align-items: start;
+  display: inline-grid;
+  gap: 50px;
+  grid: auto / repeat(2, 1fr);
+}
+
+.album-layout__cover-container {
+  display: inline-grid;
+  gap: 15px;
+  position: relative;
+}
+
+.album-layout__cover {
+  background-color: var(--color-black);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 10px solid var(--color-white);
+  display: inline-grid;
+  height: 325px;
+  width: 325px;
+}
+
+.album-layout__cover-releasedate {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  font-size: 14px;
+  font-weight: 300;
+  padding: 10px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.album-layout__cover-home, .album-layout__services-home {
+  display: inline-grid;
+  justify-content: flex-start;
+}
+
+.album-layout__cover-home > a, .album-layout__services-home > a {
+  color: var(--color-white);
+  font-size: 16px;
+  font-weight: 300;
+  text-align: left;
+}
+
+.album-layout__cover-home > a[href]:hover, .album-layout__services-home > a[href]:hover {
+  color: rgba(var(--color-white-rgb), 0.8);
+}
+
+.album-layout__services {
+  display: inline-grid;
+  gap: 4px;
+}
+
+.album-layout__services-home {
+  display: none;
+}
+
+.album-layout__service {
+  display: inline-grid;
+  gap: 4px;
+  grid: 85px / 200px auto;
+  text-decoration: none;
+}
+
+.album-layout__service:hover > .album-layout__service-logo, .album-layout__service:hover > .album-layout__service-action {
+  background-color: rgba(var(--color-white-rgb), 0.90);
+}
+
+.album-layout__service-logo {
+  align-items: center;
+  background-color: var(--color-white);
+  display: inline-grid;
+  height: 100%;
+  justify-items: center;
+  width: 100%;
+}
+
+.album-layout__service-logo > svg {
+  max-height: 35px;
+  max-width: 150px;
+}
+
+.album-layout__service-action {
+  align-items: center;
+  background-color: var(--color-white);
+  display: inline-grid;
+  justify-items: center;
+}
+
+.album-layout__service-action > p {
+  color: var(--color-black);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 575.98px) {
+  .album-layout__main {
+    padding: 15px;
+    width: 100%;
+  }
+
+  .album-layout__title {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+  .album-layout__hr {
+    margin-bottom: 15px;
+  }
+
+  .album-layout__meta {
+    gap: 15px;
+    grid: repeat(2, max-content) / 1fr;
+    width: 100%;
+  }
+
+  .album-layout__meta--noservices {
+    gap: 4px;
+  }
+
+  .album-layout__cover-home {
+    display: none;
+  }
+
+  .album-layout__cover {
+    height: auto;
+    padding-top: calc(100% - 10px * 2);
+    width: 100%;
+  }
+
+  .album-layout__services-home {
+    display: inline-grid;
+    justify-content: center;
+    margin-top: 11px;
+  }
+
+  .album-layout__service:hover > .album-layout__service-logo, .album-layout__service:hover > .album-layout__service-action {
+    background-color: var(--color-white);
+  }
+}

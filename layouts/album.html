@@ -1,0 +1,98 @@
+<!doctype html>
+<html {{ if BUILD_TYPE === BUILD_TYPE_AMP }}amp {{ endif }}lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="MobileOptimized" content="width" />
+    <meta name="google" content="notranslate" />
+    <meta name="locale" content="en" />
+
+    <meta name="msapplication-TileColor" content="#000000" />
+    <meta name="msapplication-TileImage" content="{{ PUBLIC_URL }}/favicon-144x144.png" />
+    <meta name="msapplication-config" content="{{ PUBLIC_URL }}/browserconfig.xml" />
+
+    <meta name="robots" content="{{ PAGE_ROBOTS }}" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0" />
+
+    {{ PAGE_METATAGS }}
+
+    <link rel="apple-touch-icon" href="{{ PUBLIC_URL }}/favicon-192x192.png" />
+    <link rel="apple-touch-icon" href="{{ PUBLIC_URL }}/favicon-57x57.png" sizes="57x57" />
+    <link rel="apple-touch-icon" href="{{ PUBLIC_URL }}/favicon-60x60.png" sizes="60x60" />
+    <link rel="apple-touch-icon" href="{{ PUBLIC_URL }}/favicon-72x72.png" sizes="72x72" />
+    <link rel="apple-touch-icon" href="{{ PUBLIC_URL }}/favicon-76x76.png" sizes="76x76" />
+    <link rel="apple-touch-icon" href="{{ PUBLIC_URL }}/favicon-114x114.png" sizes="114x114" />
+    <link rel="apple-touch-icon" href="{{ PUBLIC_URL }}/favicon-120x120.png" sizes="120x120" />
+    <link rel="apple-touch-icon" href="{{ PUBLIC_URL }}/favicon-144x144.png" sizes="144x144" />
+    <link rel="apple-touch-icon" href="{{ PUBLIC_URL }}/favicon-152x152.png" sizes="152x152" />
+    <link rel="apple-touch-icon" href="{{ PUBLIC_URL }}/favicon-180x180.png" sizes="180x180" />
+    <link rel="icon" href="{{ PUBLIC_URL }}/favicon-16x16.png" type="image/png" sizes="16x16" />
+    <link rel="icon" href="{{ PUBLIC_URL }}/favicon-32x32.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="{{ PUBLIC_URL }}/favicon-96x96.png" type="image/png" sizes="96x96" />
+    <link rel="icon"  href="{{ PUBLIC_URL }}/favicon-192x192.png" type="image/png" sizes="192x192" />
+    {{ if BUILD_TYPE === BUILD_TYPE_AMP }}
+      <link rel="manifest" href="{{ PUBLIC_URL }}/manifest.amp.json" />
+    {{ else }}
+      <link rel="manifest" href="{{ PUBLIC_URL }}/manifest.json" />
+    {{ endif }}
+    <link rel="mask-icon" href="{{ PUBLIC_URL }}/favicon.svg" color="#000000" />
+    <link rel="shortcut icon" href="{{ PUBLIC_URL }}/favicon.ico" />
+    {{ if BUILD_TYPE === BUILD_TYPE_AMP }}
+      <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js" />
+    {{ endif }}
+
+    <title>{{ PAGE_TITLE }}</title>
+
+    {{ if BUILD_TYPE === BUILD_TYPE_AMP }}
+      <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    {{ endif }}
+
+    {{ PAGE_STYLE }}
+
+    {{ if BUILD_TYPE === BUILD_TYPE_AMP }}
+      {{ STRUCTURED_DATA }}
+      <script async src="https://cdn.ampproject.org/v0.js"></script>
+      <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+      <script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+    {{ else }}
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!=='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-ML2F732');</script>
+    {{ endif }}
+  </head>
+  <body>
+    {{ if BUILD_TYPE !== BUILD_TYPE_AMP }}
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-ML2F732" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    {{ endif }}
+    <div class="album-layout">
+      <span class="album-layout__bg" style="background-image: url('{{ PAGE_IMAGE }}')"></span>
+      <main class="album-layout__main">
+        <h1 class="album-layout__title">
+          <span class="album-layout__title-name">{{ ALBUM_NAME }}</span>
+          <span class="album-layout__title-author">Aaron Delasy {{ ALBUM_EXPLICIT_ICON }}</span>
+        </h1>
+        <hr class="album-layout__hr" />
+        <div class="{{ ALBUM_META_CLASS }}">
+          <div class="album-layout__cover-container">
+            <span class="album-layout__cover" style="background-image: url('{{ PAGE_IMAGE }}')"></span>
+            {{ ALBUM_RELEASE_DATE }}
+            <div class="album-layout__cover-home">
+              <a href="{{ link('/') }}" rel="noopener noreferrer" target="_blank">Open Home Page</a>
+            </div>
+          </div>
+          <div class="album-layout__services">
+            {{ ALBUM_SERVICES }}
+            <div class="album-layout__services-home">
+              <a href="{{ link('/') }}" rel="noopener noreferrer" target="_blank">Open Home Page</a>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    {{ PAGE_SCRIPT }}
+    {{ if BUILD_TYPE === BUILD_TYPE_AMP }}
+      <amp-analytics config="https://www.googletagmanager.com/amp.json?id=GTM-59JHVWM&gtm.url=SOURCE_URL" data-credentials="include"></amp-analytics>
+      <amp-install-serviceworker data-iframe-src="{{ PUBLIC_URL }}/sw-install.amp.html" layout="nodisplay" src="{{ PUBLIC_URL }}/sw.amp.js"></amp-install-serviceworker>
+    {{ endif }}
+  </body>
+</html>

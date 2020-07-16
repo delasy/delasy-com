@@ -1,0 +1,104 @@
+{
+  "_error": {
+    "page": {
+      "title": "Page Not Found | Aaron Delasy",
+      "image": "{{ PUBLIC_URL }}/og.jpg",
+      "robots": false,
+      "layout": "~/layouts/default.html",
+      "content": "~/pages/_error.html",
+      "scripts": [
+        "~/assets/js/common.js"
+      ],
+      "styles": [
+        "~/assets/css/styles.css",
+        "~/assets/css/layouts/default.css",
+        "~/assets/css/pages/_error.css"
+      ]
+    }
+  },
+  "_offline": {
+    "page": {
+      "title": "Page Offline | Aaron Delasy",
+      "robots": false,
+      "layout": "~/layouts/default.html",
+      "content": "~/pages/_offline.html",
+      "scripts": [
+        "~/assets/js/common.js"
+      ],
+      "styles": [
+        "~/assets/css/styles.css",
+        "~/assets/css/layouts/default.css",
+        "~/assets/css/pages/_offline.css"
+      ]
+    }
+  },
+  "index": {
+    "page": {
+      "title": "Aaron Delasy Official Website",
+      "description": "Get the latest information on Aaron Delasy – Music, Album, Videos, Tour and More!",
+      "image": "{{ PUBLIC_URL }}/og.jpg",
+      "keywords": [
+        "Delasy",
+        "Aaron Delasy",
+        "Dollar Over Euro"
+      ],
+      "layout": "~/layouts/default.html",
+      "content": "~/pages/index.html",
+      "scripts": [
+        "~/assets/js/common.js"
+      ],
+      "styles": [
+        "~/assets/css/styles.css",
+        "~/assets/css/layouts/default.css",
+        "~/assets/css/pages/index.css"
+      ]
+    }
+  },
+  "music": {
+    "page": {
+      "title": "Music | Aaron Delasy",
+      "description": "Get the latest music information on Aaron Delasy!",
+      "image": "{{ PUBLIC_URL }}/og.jpg",
+      "keywords": [
+        "Delasy",
+        "Aaron Delasy",
+        "Dollar Over Euro"
+      ],
+      "layout": "~/layouts/default.html",
+      "content": "~/pages/music.html",
+      "scripts": [
+        "~/assets/js/common.js"
+      ],
+      "styles": [
+        "~/assets/css/styles.css",
+        "~/assets/css/layouts/default.css",
+        "~/assets/css/pages/music.css"
+      ]
+    }
+  },
+  "dollar-over-euro": {
+    "page": {
+      "title": "Dollar Over Euro - Aaron Delasy",
+      "description": "Listen to Dollar Over Euro by Aaron Delasy",
+      "image": "{{ PUBLIC_URL }}/img/dollar-over-euro.jpg",
+      "keywords": [
+        "Delasy",
+        "Aaron Delasy",
+        "Dollar Over Euro"
+      ],
+      "layout": "~/layouts/album.html",
+      "scripts": [
+        "~/assets/js/common.js"
+      ],
+      "styles": [
+        "~/assets/css/styles.css",
+        "~/assets/css/layouts/album.css"
+      ]
+    },
+    "album": {
+      "name": "Dollar Over Euro",
+      "explicit": false,
+      "release_date": "2020-08-19"
+    }
+  }
+}

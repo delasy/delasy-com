@@ -1,0 +1,42 @@
+.error-page {
+  display: grid;
+  justify-items: center;
+}
+
+.error-page__headline {
+  color: var(--color-white);
+  font-size: 48px;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+.error-page__subtitle {
+  color: var(--color-white);
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.error-page__paragraph {
+  color: var(--color-white);
+  font-size: 16px;
+  font-weight: 300;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.error-page__paragraph > a {
+  color: var(--color-white);
+  display: inline-grid;
+  margin-top: 4px;
+}
+
+.error-page__paragraph > a[href]:hover {
+  color: rgba(var(--color-white-rgb), 0.8);
+}
+
+@media (max-width: 575.98px) {
+  .error-page__headline {
+    font-size: 34px;
+  }
+}

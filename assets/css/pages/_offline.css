@@ -1,0 +1,32 @@
+.offline-page {
+  display: grid;
+  justify-items: center;
+}
+
+.offline-page__headline {
+  color: var(--color-white);
+  font-size: 48px;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+.offline-page__subtitle {
+  color: var(--color-white);
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.offline-page__paragraph {
+  color: var(--color-white);
+  font-size: 16px;
+  font-weight: 300;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+@media (max-width: 575.98px) {
+  .offline-page__headline {
+    font-size: 34px;
+  }
+}

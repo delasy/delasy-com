@@ -1,0 +1,25 @@
+.index-page {
+  display: grid;
+  position: relative;
+}
+
+.index-page > a {
+  display: inline-grid;
+}
+
+.index-page__cover {
+  background-color: var(--color-black);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-grid;
+  height: calc(100vh - 75px * 2 - 25px * 2);
+  width: calc(100vh - 75px * 2 - 25px * 2);
+}
+
+@media (max-width: 575.98px) {
+  .index-page__cover {
+    height: calc(100vw - 15px * 2);
+    width: calc(100vw - 15px * 2);
+  }
+}
